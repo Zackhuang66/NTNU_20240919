@@ -63,19 +63,19 @@ AnimatorController:
   m_Name: DogPBR
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: "\u89F8\u767C\u653B\u64CA_1"
+  - m_Name: "\u89F8\u767C\u653B\u64CA"
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: "\u89F8\u767C\u9632\u79A6_1"
+  - m_Name: "\u89F8\u767C\u9632\u79A6"
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: "\u89F8\u767C\u6B7B\u4EA1_1"
+  - m_Name: "\u89F8\u767C\u6B7B\u4EA1"
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -200,7 +200,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: "\u89F8\u767C\u9632\u79A6_1"
+    m_ConditionEvent: "\u89F8\u767C\u9632\u79A6"
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8512794146069934831}
@@ -225,7 +225,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: "\u89F8\u767C\u653B\u64CA_1"
+    m_ConditionEvent: "\u89F8\u767C\u653B\u64CA"
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9216128170868849566}
@@ -284,7 +284,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: "\u89F8\u767C\u6B7B\u4EA1_1"
+    m_ConditionEvent: "\u89F8\u767C\u6B7B\u4EA1"
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2171948605111420227}

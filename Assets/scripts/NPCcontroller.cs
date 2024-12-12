@@ -9,6 +9,11 @@ namespace Zack
     {
         [SerializeField, Header("NPC資料")]
         private DataNPC dataNPC;
+        [SerializeField, Header("動畫參數")]
+        private string[] parameters =
+        {
+            "觸發攻擊","觸發防禦","觸發死亡"
+        };
 
         private Animator ani;
 
@@ -17,6 +22,10 @@ namespace Zack
         private void Awake()
         {
             ani = GetComponent<Animator>();
+        }
+        public void PlayAnimation(int index)
+        {
+            ani.SetTrigger(parameters[index]);
         }
     }
 }

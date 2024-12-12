@@ -59,11 +59,34 @@ namespace Zack
             //透過 POST 將資料傳遞到模型伺服器並設定標題
             UnityWebRequest request = new UnityWebRequest(url, "POST");
             request.uploadHandler = new UploadHandlerRaw(postData);
+            request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("Authorization", "Bearer " + key);
 
             yield return request.SendWebRequest();
 
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                print($"<color=#f33>要求失敗:{request.error}</color>");
+            }
+            else
+            {
+                string responseText = request.downloadHandler.text;
+                var response = JsonConvert.DeserializeObject<List<float>>(responseText);
+                print($"<color=#3f3>分數:{responseText}</color>");
+
+                if (response != null && response.Count > 0)
+                {
+                    int best = response.Select((value, index ) => new
+                    {
+                        Value = value, Index = index
+                    }).OrderByDescending(x => x.Value).First().Index;
+
+                    print($"<color=#77f>最佳結果:{npcSentence[best]}</color>");
+                    npc.PlayAnimation(best); 
+                }
+
+            }
             print(request.result);
         }
     }
